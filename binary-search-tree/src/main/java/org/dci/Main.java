@@ -58,5 +58,29 @@ public class Main {
         myLinkedList.addItem(new Node("10"));
         System.out.println("\nNow tree looks like:");
         myLinkedList.traverse(myLinkedList.getRoot());
+
+
+        SearchTree searchTree = new SearchTree(new Node("5"));
+        searchTree.addItem(new Node("3"));
+        searchTree.addItem(new Node("7"));
+        searchTree.addItem(new Node("2"));
+        searchTree.addItem(new Node("4"));
+        searchTree.addItem(new Node("6"));
+        searchTree.addItem(new Node("8"));
+
+        System.out.println("\nIn-order traversal of SearchTree:");
+        searchTree.traverse(searchTree.getRoot());
+
+        System.out.println("\nRemoving 3 from SearchTree:");
+        searchTree.removeItem(new Node("3"));
+        searchTree.traverse(searchTree.getRoot());
+
+        System.out.println("\nRemoving 7 from SearchTree:");
+        searchTree.removeItem(new Node("7"));
+        searchTree.traverse(searchTree.getRoot());
+
+        System.out.println("\nRemoving 5 from SearchTree:");
+        searchTree.removeItem(new Node("5"));
+        searchTree.traverse(searchTree.getRoot());
     }
 }
