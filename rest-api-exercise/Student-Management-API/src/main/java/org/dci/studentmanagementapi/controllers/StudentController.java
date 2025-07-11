@@ -47,4 +47,13 @@ public class StudentController {
     public ResponseEntity<Student> updateStudent(@PathVariable UUID id, @Valid @RequestBody StudentDTO studentDTO) {
         return ResponseEntity.of(studentService.updateStudent(id, studentDTO));
     }
+
+    @GetMapping("/major/{major}")
+    public ResponseEntity<List<Student>> getStudentsByMajor(@PathVariable String major) {
+        List<Student> students = studentService.findStudentsByMajor(major);
+        if (students.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(students);
+    }
 }

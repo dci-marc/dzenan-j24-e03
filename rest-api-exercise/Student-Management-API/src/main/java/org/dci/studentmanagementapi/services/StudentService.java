@@ -70,4 +70,8 @@ public class StudentService {
         return Optional.of(studentRepository.save(student));
     }
 
+    public List<Student> findStudentsByMajor(String major) {
+        return studentRepository.findByMajorIgnoreCase(major);
+    }
+
 }
